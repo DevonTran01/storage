@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FitnessQuest.Maui.MainPage"
+    Title="Fitness Quest">
+
+    <VerticalStackLayout 
+        Padding="20"
+        Spacing="16">
+
+        <!-- Title -->
+        <Label 
+            Text="Fitness Quest Generator"
+            FontSize="24"
+            HorizontalOptions="Center" />
+
+        <!-- Difficulty Picker -->
+        <Picker
+            Title="Select Difficulty"
+            ItemsSource="{Binding Difficulties}"
+            SelectedItem="{Binding SelectedDifficulty}" />
+
+        <!-- Generate Button -->
+        <Button
+            Text="Generate Quest"
+            Command="{Binding GenerateCommand}" />
+
+        <!-- Quest Result -->
+        <Frame 
+            BorderColor="LightGray"
+            Padding="12"
+            CornerRadius="10">
+
+            <VerticalStackLayout Spacing="8">
+
+                <Label 
+                    Text="{Binding Title}"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label 
+                    Text="{Binding Description}"
+                    FontSize="16" />
+
+                <Label 
+                    Text="{Binding Reward}"
+                    FontSize="16"
+                    TextColor="Green" />
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>
